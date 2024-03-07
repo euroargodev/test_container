@@ -14,6 +14,7 @@ jobs:
         - 80
       volumes:
         - my_docker_volume:/volume_mount
+        - DECODER_RUNTIME_DIR:/mnt/runtime
       options: --cpus 1
     steps:
       - name: Check for dockerenv file
@@ -28,4 +29,6 @@ jobs:
         run: (ls /mnt/data/config && echo Found External configurations directory) || (echo No External configurations directory)
       - name: Check for GEBCO file
         run: (ls /mnt/ref/gebco.nc && echo Found GEBCO file) || (echo No GEBCO file)
+      - name: Check volumes
+        run: ls -l /DECODER_RUNTIME_DIR
 
