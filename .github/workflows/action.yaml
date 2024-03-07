@@ -7,7 +7,7 @@ jobs:
   container-test-job:
     runs-on: ubuntu-latest
     container:
-      image: node:18
+      image: ghcr.io/euroargodev/coriolis-data-processing-chain-for-argo-floats:061a
       env:
         NODE_ENV: development
       ports:
