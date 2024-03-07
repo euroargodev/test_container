@@ -18,3 +18,14 @@ jobs:
     steps:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+      - name: Check for Matlab runtime environment
+        run: (ls /mnt/runtime && echo Found Matlab runtime environment) || (echo No Matlab runtime environment)
+      - name: Check for Output files directory
+        run: (ls /mnt/data/output && echo Found Output files directory) || (echo No Output files directory)
+      - name: Check for Input files directory
+        run: (ls /mnt/data/rsync && echo Found Input files directory) || (echo No Input files directory)
+      - name: Check for External configurations directory
+        run: (ls /mnt/data/config && echo Found External configurations directory) || (echo No External configurations directory)
+      - name: Check for GEBCO file
+        run: (ls /mnt/ref/gebco.nc && echo Found GEBCO file) || (echo No GEBCO file)
+
