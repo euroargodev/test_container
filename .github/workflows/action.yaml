@@ -14,7 +14,7 @@ jobs:
         - 80
       volumes:
         - my_docker_volume:/volume_mount
-        - DECODER_RUNTIME_DIR:/mnt/runtime
+        - /mnt/runtime
       options: --cpus 1
     steps:
       - name: Check for dockerenv file
